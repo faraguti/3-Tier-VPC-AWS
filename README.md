@@ -1,4 +1,4 @@
-# Automated 3-Tier VPC Deployment with Terraform
+# Automated 3-Tier VPC Deployment on AWS with Terraform
 
 This project demonstrates the automated deployment of a 3-tier Virtual Private Cloud (VPC) using Terraform. The VPC consists of public and private subnets, internet gateways, NAT gateways, and route tables. The configuration files provided in this repository allow you to easily deploy the infrastructure on AWS.
 
