@@ -2,7 +2,6 @@ pipeline {
     agent any
     
     environment {
-        TF_CLI_ARGS = '-input=false -lock=true -lock-timeout=300s'
         AWS_ACCESS_KEY_ID     = credentials('AWS_ACCESS_KEY_ID')
         AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
     }
@@ -17,7 +16,7 @@ pipeline {
         stage('Terraform Init') {
             steps {
                 script {
-                    sh 'terraform init -reconfigure'
+                    sh 'terraform init'
                 }
             }
         }
@@ -26,21 +25,23 @@ pipeline {
             steps {
                 script {
                     sh 'terraform plan'
+                    sh 'terraform plan -out myplan'
                 }
             }
         }
         
-        stage('Confirm and Apply') {
-            input {
-                message "Terraform plan created. Do you want to apply it?"
-                ok "Yes"
-                submitter "admin"
-            }
+        stage('Approval') {
             steps {
                 script {
-                    sh 'terraform apply'
+                def userInput = input(id: 'confirm', message: 'Apply Terraform?', parameters: [ [$class: 'BooleanParameterDefinition', defaultValue: false, description: 'Apply terraform', name: 'confirm'] ])
                 }
             }
         }
-    }
+
+        stage('TF Apply') {
+            steps {                 
+                sh 'terraform apply -input=false myplan'
+            }
+        }
+    } 
 }
