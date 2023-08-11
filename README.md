@@ -46,7 +46,9 @@ If you prefer to use an S3 bucket to store the Terraform state file for better c
 
 1. Navigate to the `S3-Bucket-State` directory in this repository.
 2. Initialize Terraform within the `S3-Bucket-State` directory, plan and apply.
-3. Once the S3 bucket is created, you can return to the root directory and proceed with the VPC deployment by following the earlier usage instructions.
+3. Once the S3 bucket is created, you can return to the root directory.
+4. Open the `backend.tf` file located in the root folder, Uncomment the `terraform` block that configures the S3 backend and fill in with your bucket info.
+5. Proceed with the VPC deployment by following the earlier usage instructions.
 
 > [!NOTE]  
 > **Remember that using an S3 bucket for Terraform state offers benefits such as improved collaboration and locking, making it a recommended practice for production deployments.** 
