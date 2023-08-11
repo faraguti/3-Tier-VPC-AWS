@@ -1,6 +1,7 @@
 # Create an S3 bucket to store Terraform state
 resource "aws_s3_bucket" "terraform-state" {
     bucket = "terraform-state-faraguti"
+    # bucket_prefix = var.bucket_prefix
 
     # Prevent accidental deletion of the bucket
     lifecycle {
