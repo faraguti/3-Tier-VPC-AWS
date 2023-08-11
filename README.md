@@ -39,7 +39,3 @@ Don't forget to create a `terraform.tfvars` file to provide values for variables
 ## Contributing
 
 Contributions are welcome! Feel free to open issues or pull requests if you find any improvements or have suggestions.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
