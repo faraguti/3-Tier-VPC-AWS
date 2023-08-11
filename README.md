@@ -15,7 +15,7 @@ Before you begin, ensure you have the following:
 
 ## Project Structure
 
-- `00-S3-terraform-state.tf`: Configures an S3 bucket to store Terraform state and enables versioning and encryption.
+- `S3-Bucket-State (Folder - Optional)`: Configures an S3 bucket to store Terraform state and enables versioning and encryption.
 - `01-vpc.tf`: Defines the Virtual Private Cloud (VPC) with public and private subnets.
 - `02-igw.tf`: Establishes Internet Connectivity (Internet Gateway) and attaches it to the VPC.
 - `03-subnets.tf`: Creates public and private subnets in two availability zones.
@@ -39,6 +39,17 @@ Before you begin, ensure you have the following:
 ## Important Note
 
 Don't forget to create a `terraform.tfvars` file to provide values for variables defined in `variables.tf`. This file should contain sensitive information such as AWS access keys, so make sure to keep it secure and don't commit it to version control.
+
+## Using an S3 Bucket for Terraform State (Optional)
+
+If you prefer to use an S3 bucket to store the Terraform state file for better collaboration and state management, follow these steps **BEFORE** creating the VPC:
+
+1. Navigate to the `S3-Bucket-State` directory in this repository.
+2. Initialize Terraform within the `S3-Bucket-State` directory, plan and apply.
+3. Once the S3 bucket is created, you can return to the root directory and proceed with the VPC deployment by following the earlier usage instructions.
+
+> [!NOTE]  
+> **Remember that using an S3 bucket for Terraform state offers benefits such as improved collaboration and locking, making it a recommended practice for production deployments.** 
 
 ## Contributing
 

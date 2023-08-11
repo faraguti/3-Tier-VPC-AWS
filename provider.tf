@@ -10,6 +10,6 @@ terraform {
 
 # Configure the AWS provider settings for the project
 provider "aws" {
-    # profile = "terraform"   # Use the "terraform" AWS profile for credentials
+    # profile = "terraform"   # Use your AWS profile for credentials
     region = var.region     # Set the AWS region based on the provided variable
 }
