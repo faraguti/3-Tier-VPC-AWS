@@ -1,3 +1,4 @@
+# Configure Terraform backend to store state in an S3 bucket
 terraform {
   backend "s3" {
     bucket = "terraform-state-faraguti"
@@ -6,6 +7,7 @@ terraform {
     region = "us-west-2"
     encrypt = true
     
+    # Use the "terraform" AWS profile for credentials
     profile = "terraform"
   }
 }

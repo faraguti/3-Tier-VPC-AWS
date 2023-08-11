@@ -1,3 +1,4 @@
+# Define the required provider versions for the project
 terraform {
   required_providers {
     aws = {
@@ -7,7 +8,8 @@ terraform {
   }
 }
 
+# Configure the AWS provider settings for the project
 provider "aws" {
-    profile = "terraform"
-    region = "us-west-2"
+    profile = "terraform"   # Use the "terraform" AWS profile for credentials
+    region = var.region     # Set the AWS region based on the provided variable
 }
