@@ -8,6 +8,6 @@ terraform {
     encrypt = true
     
     # Use the "terraform" AWS profile for credentials
-    profile = "terraform"
+    # profile = "terraform"
   }
 }
