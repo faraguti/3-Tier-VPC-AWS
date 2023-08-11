@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     environment {
-        TF_CLI_ARGS = '-input=false -lock=true -lock-timeout=300s -var-file=terraform.tfvars'
+        TF_CLI_ARGS = '-input=false -lock=true -lock-timeout=10s -var-file=terraform.tfvars'
         AWS_ACCESS_KEY_ID     = credentials('AWS_ACCESS_KEY_ID')
         AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
     }
