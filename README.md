@@ -45,9 +45,9 @@ Don't forget to create a `terraform.tfvars` file to provide values for variables
 If you prefer to use an S3 bucket to store the Terraform state file for better collaboration and state management, follow these steps **BEFORE** creating the VPC:
 
 1. Navigate to the `S3-Bucket-State` directory in this repository.
-2. Initialize Terraform within the `S3-Bucket-State` directory, plan and apply.
+2. Initialize Terraform within the `S3-Bucket-State` directory, plan and apply (Don't forget to use a unique bucket name or use the bucket prefix).
 3. Once the S3 bucket is created, you can return to the root directory.
-4. Open the `backend.tf` file located in the root folder, Uncomment the `terraform` block that configures the S3 backend and fill in with your bucket info.
+4. Open the `backend.tf` file located in the root folder, Uncomment the `terraform` block that configures the S3 backend and fill in with your bucket information.
 5. Proceed with the VPC deployment by following the earlier usage instructions.
 
 > [!NOTE]  
